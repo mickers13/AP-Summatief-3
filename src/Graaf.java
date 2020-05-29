@@ -24,9 +24,12 @@ public class Graaf {
     }
 
     public void PrintRoute() {
+        System.out.println("------------------------------------");
         System.out.println("De goedkoopste reis van " + beginpunt + " naar " + eindpunt + " is :");
         for (Stap index : goedkoopsteRoute) {
             System.out.println(index.toString());
         }
+        System.out.println("En dit heeft €"+reis.getPrijs()+",- gekost.");
+        System.out.println("------------------------------------");
     }
 }

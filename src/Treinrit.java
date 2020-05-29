@@ -5,8 +5,6 @@ public class Treinrit extends Stap{
     private HashMap<Stap, Double> connecties = new HashMap<>();
     private String naam;
     public Treinrit(String naam){
-        //add deze node aan de list van alle bestaande nodes, en voer uit wat uitgevoerd moet worden.
-        addNode(this);
         this.naam = naam;
     }
     @Override
@@ -41,12 +39,12 @@ public class Treinrit extends Stap{
         // I take distance as distance in kilometers what I divide by 100 what is the cost per kilometer for trains according to following source:
         // https://gemiddeldgezien.nl/gemiddelde-snelheid-trein
         // because of this, if a neighbour has a train station, it might be a very short drive by train.
-        // I also add 5 as a "instap tarief." want instappen kost ook wat tijd met de trein.
+        // I also add 15 as a "instap tarief." want instappen kost ook wat tijd met de trein.
         if (distance == 0){
             // even een division by zero voorkomen, sowieso als je geen afstand hoeft af te leggen, dan kan je beter niet in de trein stappen.
             return distance;
         }
-        return (distance/100+5);
+        return (distance/100+15);
     }
 
 

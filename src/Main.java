@@ -17,27 +17,27 @@ public class Main {
         Stap schipholParking = new Rit("schipholParking");
 
         //duitsland vrij bereikbaar
-        Vlucht berlinAirport = new Vlucht("berlinAirport");
-        Treinrit berlinTreinstation = new Treinrit("berlinTreinstation");
-        Rit berlinParking = new Rit("berlinParking");
+        Stap berlinAirport = new Vlucht("berlinAirport");
+        Stap berlinTreinstation = new Treinrit("berlinTreinstation");
+        Stap berlinParking = new Rit("berlinParking");
 
         //zwitserland vrij bereikbaar, maar helaas zijn de airport en het treinstation gesloten ivm corona.
-        Rit geneveParking = new Rit("geneveParking");
+        Stap geneveParking = new Rit("geneveParking");
 
         //italie is redelijk bereikbaar, maar helaas is de airport gesloten ivm corona.
-        Treinrit romeTreinstation = new Treinrit("romeTreinstation");
-        Rit romeParking = new Rit("romeParking");
+        Stap romeTreinstation = new Treinrit("romeTreinstation");
+        Stap romeParking = new Rit("romeParking");
 
         //engeland is redelijk bereikbaar, maar helaas niet echt te bereiken met de trein.
-        Rit londenParking = new Rit("londenParking");
-        Vlucht londenAirport = new Vlucht("londenAirport");
+        Stap londenParking = new Rit("londenParking");
+        Stap londenAirport = new Vlucht("londenAirport");
 
         //belgie is vrij bereikbaar, maar helaas niet met de auto ( de boot van engeland telt niet ;) ), want de belgen hadden de weg afgesneden. Ook is de airport dicht ivm corona
-        Treinrit brusselTreinstation = new Treinrit("brusselTreinstation");
-        Rit brusselParking = new Rit("brusselParking");
+        Stap brusselTreinstation = new Treinrit("brusselTreinstation");
+        Stap brusselParking = new Rit("brusselParking");
 
         //japan is vrij ver, maar niet te bereiken met de trein of auto.
-        Vlucht hanedaAirport = new Vlucht("HanedaAirport");
+        Stap hanedaAirport = new Vlucht("HanedaAirport");
 
         // alle "binnenlandse reizen ( overstappen )"
         addWederzijdseConnectie(schipholAirport,schipholTreinstation,0);

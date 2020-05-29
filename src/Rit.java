@@ -5,8 +5,6 @@ public class Rit extends Stap{
     private HashMap<Stap, Double> connecties = new HashMap<>();
     private String naam;
     public Rit(String naam){
-        //add deze node aan de list van alle bestaande nodes, en voer uit wat uitgevoerd moet worden.
-        addNode(this);
         this.naam = naam;
     }
     @Override
@@ -35,7 +33,7 @@ public class Rit extends Stap{
             // even een division by zero voorkomen, sowieso als je geen afstand hoeft af te leggen, dan kan je beter niet in de trein stappen.
             return distance;
         }
-        return ((distance/19)*0.43);//return how many hours you have traveled.
+        return ((distance/19)*0.40);
     }
     @Override
     public String getNaam() {

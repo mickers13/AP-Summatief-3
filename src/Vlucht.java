@@ -5,9 +5,8 @@ public class Vlucht extends Stap{
 //    private ArrayList<Stap> connecties = new ArrayList<>();
     private HashMap<Stap, Double> connecties = new HashMap<>();
     private String naam;
+    Double afstandkosten = 999999999.0;
     public Vlucht(String naam){
-        //add deze node aan de list van alle bestaande nodes, en voer uit wat uitgevoerd moet worden.
-        addNode(this);
         this.naam = naam;
     }
 
@@ -35,10 +34,10 @@ public class Vlucht extends Stap{
     }
     public double calculateRatio(int distance){
         // this is the base "unit" of flights, what should be measured in cost in euros.
-        // I take distance as distance in kilometers what I multiply by 0.20 what is the cost per kilometer for KLM according to following source:
+        // I take distance as distance in kilometers what I multiply by 0.40 what is the cost per kilometer for KLM according to following source:
         // https://www.luchtvaartnieuws.nl/nieuws/categorie/2/airlines/klm-per-kilometer-twee-keer-zo-duur-als-emirates
         // because of this, if a neighbour or endnode has an airport, flying will almost always be cheap.
-        return ((distance*0.20)+5);
+        return ((distance*0.40)+40);
     }
     @Override
     public String getNaam() {
