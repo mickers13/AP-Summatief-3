@@ -3,9 +3,11 @@ import java.util.Set;
 
 public class Treinrit extends Stap{
     private HashMap<Stap, Double> connecties = new HashMap<>();
-    public Treinrit(){
+    private String naam;
+    public Treinrit(String naam){
         //add deze node aan de list van alle bestaande nodes, en voer uit wat uitgevoerd moet worden.
         addNode(this);
+        this.naam = naam;
     }
     @Override
     public void addConnectie(Stap connectie, int distance) {
@@ -28,6 +30,12 @@ public class Treinrit extends Stap{
             return 100000.0;
         }
     }
+
+    @Override
+    public String getNaam() {
+        return naam;
+    }
+
     public double calculateRatio(int distance){
         // this is the base "unit" of trains, what should be measured in cost in time (km/u).
         // I take distance as distance in kilometers what I divide by 100 what is the cost per kilometer for trains according to following source:

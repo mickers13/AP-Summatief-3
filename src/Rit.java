@@ -3,9 +3,11 @@ import java.util.Set;
 
 public class Rit extends Stap{
     private HashMap<Stap, Double> connecties = new HashMap<>();
-    public Rit(){
+    private String naam;
+    public Rit(String naam){
         //add deze node aan de list van alle bestaande nodes, en voer uit wat uitgevoerd moet worden.
         addNode(this);
+        this.naam = naam;
     }
     @Override
     public void addConnectie(Stap connectie, int distance) {
@@ -34,6 +36,10 @@ public class Rit extends Stap{
             return distance;
         }
         return ((distance/19)*0.43);//return how many hours you have traveled.
+    }
+    @Override
+    public String getNaam() {
+        return naam;
     }
 
 

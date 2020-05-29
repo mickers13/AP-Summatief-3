@@ -4,9 +4,11 @@ import java.util.Set;
 public class Vlucht extends Stap{
 //    private ArrayList<Stap> connecties = new ArrayList<>();
     private HashMap<Stap, Double> connecties = new HashMap<>();
-    public Vlucht(){
+    private String naam;
+    public Vlucht(String naam){
         //add deze node aan de list van alle bestaande nodes, en voer uit wat uitgevoerd moet worden.
         addNode(this);
+        this.naam = naam;
     }
 
 
@@ -37,6 +39,10 @@ public class Vlucht extends Stap{
         // https://www.luchtvaartnieuws.nl/nieuws/categorie/2/airlines/klm-per-kilometer-twee-keer-zo-duur-als-emirates
         // because of this, if a neighbour or endnode has an airport, flying will almost always be cheap.
         return ((distance*0.20)+5);
+    }
+    @Override
+    public String getNaam() {
+        return naam;
     }
 
 

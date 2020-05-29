@@ -27,6 +27,7 @@ public abstract class Stap {
     public int getTempShortestDistance() {
         return tempShortestDistance;
     }
+
     public abstract HashMap<Stap, Double> getConnecties();
 
     public void setTempShortestDistance(int tempShortestDistance) {
@@ -48,8 +49,14 @@ public abstract class Stap {
 
     public abstract Double getDistance(Stap b);
 
+    public abstract String getNaam();
+
     @Override
     public String toString() {
-        return (this.getClass().getName() +"");
+
+        String type = this.getClass().getName();
+
+
+        return (this.getNaam());
     }
 }

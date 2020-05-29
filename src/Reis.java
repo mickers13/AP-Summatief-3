@@ -6,15 +6,16 @@ public class Reis {
     private PriorityQueue<Stap> unsettled = new PriorityQueue<>(Compareable.nodeCompareator);
     // opslag van alle daadwerkelijk bezochte nodes, die pas gevuld is aan het einde van de reis.
     private ArrayList<Stap> route = new ArrayList<>();
+    ArrayList<Stap> goedkoopsteroute = new ArrayList<>();
 
-    public Reis(Stap begin, Stap eind) {
+    public Reis(Graaf graaf , Stap begin, Stap eind) {
         // defineer begin node en eind node van een reis
         this.begin = begin;
         this.eind = eind;
         Stap temp = begin;
 //        NodeCompareQueue.add(begin);
         // initialisatie van dijkstra
-        ArrayList<Stap> allNodes = begin.getNodesListCopy();
+        ArrayList<Stap> allNodes = graaf.getAlleNodes();
         Set<Stap> duplicatecheck = new HashSet<>();
         ArrayList<Stap> settled = new ArrayList<>();
         begin.setTempShortestDistance(0);
@@ -35,7 +36,6 @@ public class Reis {
                     if (unsettled.contains(stap)) {
                         if (distance < stap.getTempShortestDistance()) {
                             unsettled.remove(stap);
-
                         }
                     }
                     stap.setTempShortestDistance(currentevaluation.getTempShortestDistance()+distance);
@@ -45,18 +45,18 @@ public class Reis {
             }
             settled.add(currentevaluation);
         }
-        // Vanaf het einde terug tracen, zodat ik de route makkelijk kan bekijken. Ik had dit ook tijdens de while loop kunnen doen, maar ik vond dit onoverzichtelijk en deze aanpak is denk ik ook nét wat efficienter ( aan het einde een keer de goedkoopste route bekijken, ipv elke keer checken of je het moet toevoegen ja of nee.)
+        // Vanaf het einde terug tracen, zodat ik de route makkelijk kan bekijken. Ik had dit ook tijdens de while loop kunnen doen, maar ik vond dit onoverzichtelijk)
         Stap huidige = eind;
-        ArrayList<Stap> goedkoopsteroute = new ArrayList<>();
+
         goedkoopsteroute.add(huidige);
         while (huidige != begin){
-            goedkoopsteroute.add(huidige.getLastnode());
+            goedkoopsteroute.add(0,huidige.getLastnode());
             huidige = huidige.getLastnode();
         }
-        for(Stap index: goedkoopsteroute){
-            System.out.println(index.toString());
-        }
+    }
 
+    public ArrayList<Stap> getGoedkoopsteroute() {
+        return goedkoopsteroute;
     }
 }
 

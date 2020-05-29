@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public interface Compareable {
-    int vliegtuigBias = 1;  // - betekend dat dit JUIST graag gedaan word, en + betekend dat dit minder graag gedaan word.
-    int treinBias = 3; // ik raad aan de getallen in de bias tussen de -5 en +5 te houden, omdat je anders de kans loopt dat je bijvoorbeeld ALLEENMAAR de trein wil nemen, terwijl dit niet altijd kan ( omdat treinreizen bijvoorbeeld je geld kan geven met minder dan -5 bijvoorbeeld.... DUs heen en weer reizen en je reis word HEEL goedkoop...
+    int vliegtuigBias = 1;
+    int treinBias = 3; // ik raad aan de getallen in de bias tussen de 0 en +5 te houden, omdat je anders de kans loopt dat je bijvoorbeeld ALLEENMAAR de trein wil nemen, terwijl dit niet altijd kan ( omdat treinreizen bijvoorbeeld je geld kan geven met minder dan -5 bijvoorbeeld.... DUs heen en weer reizen en je reis word HEEL goedkoop...
     int ritBias = 2;
     Comparator<Stap> nodeCompareator = new Comparator<Stap>() {
         @Override
