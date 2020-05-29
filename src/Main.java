@@ -91,10 +91,13 @@ public class Main {
 
 
         // ---- Maak een graaf aan die deze nodes bevat, en defineer en beginpunt en eind punt.
-
-        Graaf coronaReisRoutes = new Graaf(alleNodes,londenAirport,hanedaAirport);
-
-
+        //Drie verschillende reis routes, die ook gelijk berekend worden.
+        Graaf coronaReisRoute1 = new Graaf(alleNodes,londenAirport,geneveParking);
+        coronaReisRoute1.PrintRoute();
+        Graaf coronaReisRoute2 = new Graaf(alleNodes,londenAirport,hanedaAirport);
+        coronaReisRoute2.PrintRoute();
+        Graaf coronaReisRoute3 = new Graaf(alleNodes,schipholParking,romeTreinstation);
+        coronaReisRoute3.PrintRoute();
     }
     public static void addWederzijdseConnectie(Stap a, Stap b,int distance){
         //makkelijke manier om 2 connecties aan elkaar te leggen zonder al teveel duplicate code. ( minder menselijke fouten. )

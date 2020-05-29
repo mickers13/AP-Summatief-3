@@ -12,9 +12,6 @@ public class Reis {
         // defineer begin node en eind node van een reis
         this.begin = begin;
         this.eind = eind;
-        Stap temp = begin;
-//        NodeCompareQueue.add(begin);
-        // initialisatie van dijkstra
         ArrayList<Stap> allNodes = graaf.getAlleNodes();
         Set<Stap> duplicatecheck = new HashSet<>();
         ArrayList<Stap> settled = new ArrayList<>();
@@ -23,8 +20,7 @@ public class Reis {
         duplicatecheck.add(begin);
         Stap currentevaluation;
         begin.setLastnode(begin);// voor het algoritme telt hij de vorige distances op met de nieuwe, om te kijken of het kleiner is dan iets anders. Dit is om een null pointer te voorkomen bij de eerste. ( want er is geen vorige )
-        Stap last;
-        /// ----- daad werkelijk dijkstra algoritme
+        /// ----- daad werkelijk dijkstra algoritme ( dit is relevant voor de reis, want je wil dit alleen voor dit begin punt kunnen uitrekenen
         while (unsettled.size() > 0) {
 
             currentevaluation = unsettled.poll();// nog niet poll, want dat kan de lijst naar 0 brengen, wat de while loop sluit.

@@ -46,7 +46,7 @@ public class Treinrit extends Stap{
             // even een division by zero voorkomen, sowieso als je geen afstand hoeft af te leggen, dan kan je beter niet in de trein stappen.
             return distance;
         }
-        return (distance/100+20);//return how many hours you have traveled.
+        return (distance/100+5);
     }
 
 

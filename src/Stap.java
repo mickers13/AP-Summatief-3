@@ -34,11 +34,6 @@ public abstract class Stap {
         this.tempShortestDistance = tempShortestDistance;
     }
 
-    public ArrayList<Stap> getNodesListCopy() {
-        // return a copy of nodes list, as name dictates.
-        return new ArrayList<>(nodesList);
-    }
-
     public Stap getLastnode() {
         return Lastnode;
     }
