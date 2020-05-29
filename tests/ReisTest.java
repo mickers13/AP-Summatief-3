@@ -6,11 +6,10 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 class ReisTest {
     private Stap begin;
     private Stap eind;
-    private int prijs;
+    private int prijs ;
     private PriorityQueue<Stap> unsettled = new PriorityQueue<>(Compareable.nodeCompareator);
     // opslag van alle daadwerkelijk bezochte nodes, die pas gevuld is aan het einde van de reis.
     private ArrayList<Stap> route = new ArrayList<>();
@@ -35,10 +34,11 @@ class ReisTest {
 
     @Test
     void DijkstraAlgoritmeTest() throws Exception {
+        //gebruik niet deze test los, maar run de hele test class aub.
         setup();
         Graaf graaf = new Graaf(alleNodes,a,b);
         graaf.PrintRoute();
-//        assertEquals(graaf.reis.goedkoopsteroute.get(1),c);
+        assertEquals(graaf.reis.goedkoopsteroute.get(1),c);
 
     }
 }

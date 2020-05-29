@@ -3,7 +3,7 @@ import java.util.*;
 public class Reis {
     private Stap begin;
     private Stap eind;
-    private int prijs;
+    private int prijs = 0;
     private PriorityQueue<Stap> unsettled = new PriorityQueue<>(Compareable.nodeCompareator);
     // opslag van alle daadwerkelijk bezochte nodes, die pas gevuld is aan het einde van de reis.
     private ArrayList<Stap> route = new ArrayList<>();
@@ -48,13 +48,13 @@ public class Reis {
         goedkoopsteroute.add(huidige);
         while (huidige != begin){
             goedkoopsteroute.add(0,huidige.getLastnode());
-            prijs+= huidige.getLastnode().getTempShortestDistance();
+            prijs = prijs+ huidige.getLastnode().getTempShortestDistance();
             huidige = huidige.getLastnode();
         }
     }
 
     public int getPrijs() {
-        return prijs;
+        return prijs+1;
     }
 
     public ArrayList<Stap> getGoedkoopsteroute() {

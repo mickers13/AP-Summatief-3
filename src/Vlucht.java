@@ -23,14 +23,9 @@ public class Vlucht extends Stap{
     }
 
     public Double getDistance(Stap connectie){
-        // returns the distance to a node from this one, if no connection is found return 100000.
-        if (connecties.containsKey(connectie)){
-            return connecties.get(connectie);
-        }else{
-            // ik moet íets returnen, dus ik return een hoog getal, wat dus nooit de snelste route zal zijn( aangezien het niet kan ).
-            // ik had de if statement ook kunnen verwijderen, maar dat kan voor undefined behaviour zorgen, dus dit vind ik mooier, dan is het tenminste soortvan afgevangen.
-            return 100000.0;
-        }
+        // returns the distance to a node from this one.
+        return connecties.get(connectie);
+
     }
     public double calculateRatio(int distance){
         // this is the base "unit" of flights, what should be measured in cost in euros.
