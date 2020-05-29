@@ -33,7 +33,7 @@ public class Rit extends Stap{
             // even een division by zero voorkomen, sowieso als je geen afstand hoeft af te leggen, dan kan je beter niet in de trein stappen.
             return distance;
         }
-        return ((distance/19)*0.40);
+        return (distance);
     }
     @Override
     public String getNaam() {

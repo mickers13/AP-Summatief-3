@@ -6,8 +6,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String arg[])
-    {
+    public static void main(String arg[]) throws Exception {
         ArrayList<Stap> alleNodes = new ArrayList<>();
 
         // maak de nodes, en leg basis connecties.

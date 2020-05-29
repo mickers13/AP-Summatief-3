@@ -7,14 +7,18 @@ public class Graaf {
     private Stap beginpunt;
     private Stap eindpunt;
 
-    public Graaf(ArrayList<Stap> alleNodes,Stap beginpunt, Stap eindpunt){
+    public Graaf(ArrayList<Stap> alleNodes,Stap beginpunt, Stap eindpunt) throws Exception {
         //een graaf houd rekening met een reis, want hij gaat berekenen vanaf de begin node berekenen wat alle afstanden zijn.
         this.beginpunt = beginpunt;
         this.eindpunt = eindpunt;
-        if(alleNodes.contains(beginpunt)&&alleNodes.contains(eindpunt))
-        this.reis = new Reis(this,beginpunt,eindpunt);
         this.alleNodes = alleNodes;
-        goedkoopsteRoute = reis.getGoedkoopsteroute();
+        if(alleNodes.contains(beginpunt)&&alleNodes.contains(eindpunt)){
+            this.reis = new Reis(this,beginpunt,eindpunt);
+            goedkoopsteRoute = reis.getGoedkoopsteroute();
+        }else {
+            throw new Exception("Begin of eind node zit niet in lijst met mogenlijke nodes!");
+        }
+
 
      }
 
