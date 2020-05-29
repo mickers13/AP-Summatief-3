@@ -15,7 +15,7 @@ class MainTest {
     void addWederzijdseConnectie() {
         setup();
         Main.addWederzijdseConnectie(testvlucht,testrit,5);
-        // test of 5*0.40+40 == the answer to Life, the Universe and Everything
+        // test if 5*0.40+40 == the answer to Life, the Universe and Everything
         assertEquals(testvlucht.getConnecties().get(testrit),42);
     }
 }

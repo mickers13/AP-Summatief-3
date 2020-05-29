@@ -34,7 +34,7 @@ class GraafTest {
         // geen idee hoe ik anders een printer moet testen...
         setup();
         assertEquals(("De goedkoopste reis van " + beginpunt + " naar " + eindpunt + " is :"),
-                ("De goedkoopste reis van " + testrit + " naar " + testrit + " is :"));
+                     ("De goedkoopste reis van " + testrit + " naar " + testrit + " is :"));
 
     }
 }
